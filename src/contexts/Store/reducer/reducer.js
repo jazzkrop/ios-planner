@@ -1,0 +1,16 @@
+import createRecord from './createRecord'
+import deleteRecord from './deleteRecord'
+import updateRecord from './updateRecord'
+
+const reducer = (state, action) => {
+  const { type, payload } = action
+
+  const actionsMap = {
+    deleteRecord,
+    createRecord,
+    updateRecord
+  }
+  return actionsMap[type](state, payload)
+}
+
+export default reducer
