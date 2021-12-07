@@ -7,22 +7,22 @@ body * {
   /* dark theme config */
   --white-default: #ffffff;
   --black-default: #000000;
-  --primary-1: #212c2f;
-  --primary-2: #374143;
-  --primary-3: #5b626a;
-  --primary-4: #868c8d;
-  --secondary-1: #454b4c;
-  --secondary-2: #576062;
-  --secondary-3: #5e6465;
-  --sec: #5e6366;
-  --secondary-4: #afb1b2;
-  --secondary-5: #dddfdf;
-  --submit-1: #0684ff;
-  --submit-2: #408be6;
-  --submit-3: #86b3ef;
-  --warning: #ff9e0b;
-  --danger: #ff453a;
-  --cancel: #ffd60a;
+  --dark-lighten-1: #212c2f;
+  --dark-lighten-2: #374143;
+  --dark-lighten-3: #454b4c;
+  --dark-lighten-4: #576062;
+  --dark-lighten-5: #5b626a;
+  --dark-lighten-6: #5e6465;
+  --dark-lighten-7: #868c8d;
+  --dark-lighten-8: #afb1b2;
+  --dark-lighten-9: #c0c6c7;
+  --dark-lighten-10: #dddfdf;
+  --blue: #0684ff;
+  --blue-lighten-1: #408be6;
+  --blue-lighten-2: #86b3ef;
+  --orange: #ff9e0b;
+  --red: #ff453a;
+  --yellow: #ffd60a;
 
   /* light theme config */
 
@@ -37,7 +37,7 @@ body * {
   --fz-caption-1: 12px;
 
 }
-
+/* 
 .fz-title-1 {
   font-size: var(--fz-title-1)
 }
@@ -119,9 +119,11 @@ hr {
   padding: 6px;
   color: var(--primary-4);
 }
+
 .list-item-current {
   background: var(--secondary-3);
 }
+
 .list-item:focus-within {
   background: var(--submit-2);
   color: var(--submit-3);
@@ -137,4 +139,4 @@ button {
   background: none;
   border: none;
   font-weight: 600;
-}
+} */
