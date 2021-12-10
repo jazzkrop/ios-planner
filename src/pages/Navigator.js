@@ -8,32 +8,40 @@ import {
 } from 'react-icons/md'
 import AppLayout from '../components/Layouts/AppLayout'
 import TasksAll from './TaskAll/TaskAll'
-import Icon from '../components/Icon/Icon'
 import { Input } from '../components/Input'
+import { Container } from '../components/Grid/Container'
+import Row from '../components/Grid/Row/Row'
+import Col from '../components/Grid/Col/Col'
 
 const Navigator = () => {
   return (
     <>
       <AppLayout>
-        <Input placeholder="Поиск" iconLeft={<Icon component={MdSearch} />} />
-        <Buttton
-          iconLeft={
-            <Icon component={MdAddCircleOutline} fontSize="var(--fz-title-2)" />
-          }
-          color="var(--dark-lighten-9)"
-        >
-          Новый список
+        <Container>
+          <Row>
+            <Col cw={6}>col 1</Col>
+            <Col cw={6}>col 2</Col>
+            <Col cw={6}>col 2</Col>
+            <Col cw={6}>col 2</Col>
+            <Col cw={6}>col 2</Col>
+          </Row>
+          <Row> sdihvbijvhb</Row>
+          <Input placeholder="Поиск" iconLeft={MdSearch} size="lg" />
+          <Input color="dark" />
+          <Buttton
+            iconLeft={MdAddCircleOutline}
+            iconSize="lg"
+            color="darkLighten9"
+          >
+            Новый список
+          </Buttton>
+        </Container>
+        <Buttton iconLeft={MdAdd} iconSize="xl" color="darkLighten7" />
+        <Buttton iconLeft={MdFlag} color="orange" />
+        <Buttton iconLeft={MdClose} color="darkLighten6" />
+        <Buttton size="lg" color="darkLighten5">
+          Показать
         </Buttton>
-        <Buttton
-          iconLeft={<Icon component={MdAdd} fontSize="var(--fz-mega-1)" />}
-          color="var(--dark-lighten-7)"
-        />
-        <Buttton iconLeft={<Icon component={MdFlag} />} color="var(--orange)" />
-        <Buttton
-          iconLeft={<Icon component={MdClose} />}
-          color="var(--dark-lighten-6)"
-        />
-        <Buttton color="var(--dark-lighten-5)">Показать</Buttton>
       </AppLayout>
     </>
   )
