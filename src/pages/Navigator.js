@@ -43,21 +43,15 @@ const Navigator = () => {
               <Input type="search" placeholder="Поиск" icon={<MdSearch />} />
             </Col>
           </Row>
-          <Row> sdihvbijvhb</Row>
-
-          <Input color="dark" />
-          <Buttton
-            iconLeft={MdAddCircleOutline}
-            iconSize="lg"
-            color="darkLighten9"
-          >
+          <Input />
+          <Buttton icon={<MdAddCircleOutline />} size="md">
             Новый список
           </Buttton>
 
-          <Buttton iconLeft={MdAdd} iconSize="xl" color="darkLighten7" />
-          <Buttton iconLeft={MdFlag} color="orange" />
-          <Buttton iconLeft={MdClose} color="darkLighten6" />
-          <Buttton size="lg" color="darkLighten5">
+          <Buttton icon={<MdAdd />} color="--dark-lighten-7" size="lg" />
+          <Buttton icon={<MdFlag />} color="--orange" size="md" />
+          <Buttton icon={<MdClose />} color="--dark-lighten-6" />
+          <Buttton size="lg" color="--dark-lighten-5">
             Показать
           </Buttton>
         </Container>

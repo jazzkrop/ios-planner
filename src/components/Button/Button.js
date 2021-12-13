@@ -1,19 +1,28 @@
-import Icon from '../Icon/Icon'
-import ButttonStyle from './Button.style'
+import { ButtonStyled, TextWrapper, IconWrapper } from './Button.style'
 
-const Buttton = (props) => {
+const Button = (props) => {
+  const { isHover, isActive, children, shape, icon, size, color } = props
+
   return (
-    <ButttonStyle {...props}>
-      {props.iconLeft ? (
-        <Icon
-          component={props.iconLeft}
-          marginRight="8px"
-          size={props.iconSize}
-          color={props.color}
-        />
+    <ButtonStyled
+      size={size}
+      isHover={isHover}
+      isActive={isActive}
+      shape={shape}
+      color={color}
+    >
+      {icon && children ? (
+        <>
+          <IconWrapper size={size}>{icon}</IconWrapper>
+          <TextWrapper>{children}</TextWrapper>
+        </>
+      ) : icon ? (
+        <IconWrapper size={size}>{icon}</IconWrapper>
+      ) : children ? (
+        children
       ) : null}
-      {props.children}
-    </ButttonStyle>
+    </ButtonStyled>
   )
 }
-export default Buttton
+// rewrite logick
+export default Button
