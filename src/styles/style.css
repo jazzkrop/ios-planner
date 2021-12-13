@@ -57,13 +57,13 @@ body,
   --fz-caption-1: 12px;
 
   /* line-heigth */
-  --lh-title-1: 24px;
-  --lh-title-2: 22px;
-  --lh-subtitle-1: 20px;
-  --lh-subtitle-2: 18px;
-  --lh-body-1: 16px;
-  --lh-body-2: 14px;
-  --lh-caption-1: 12px;
+  --lh-title-1: 32px;
+  --lh-title-2: 30px;
+  --lh-subtitle-1: 28px;
+  --lh-subtitle-2: 26px;
+  --lh-body-1: 24px;
+  --lh-body-2: 22px;
+  --lh-caption-1: 20px;
   /* font weight */
   --fw-900: 900;
   --fw-800: 800;

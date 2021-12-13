@@ -1,11 +1,10 @@
 import styled from 'styled-components'
 
 const ColStyled = styled.div`
-  padding: 0 16px;
+  padding: 0 12px;
   box-sizing: border-box;
   flex: ${(props) => (props.cw ? '0 0' : '1 0')};
   flex-basis: ${(props) => (props.cw / 12) * 100}%;
-  background: green;
 
   @media (min-width: 576px) {
     flex-basis: ${(props) => {

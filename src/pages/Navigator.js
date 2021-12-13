@@ -19,16 +19,32 @@ const Navigator = () => {
       <AppLayout>
         <Container size="xs">
           <Row>
-            <Col sm={4} lg={6}>
-              col 1
+            <Col cw={4}>
+              <Input
+                type="search"
+                placeholder="Поиск"
+                icon={<MdSearch />}
+                size="sm"
+              />
             </Col>
-            <Col>col 2</Col>
-            <Col>col 2</Col>
-            <Col>col 2</Col>
-            <Col>col 2</Col>
+            <Col cw={4}>
+              <Input type="transperent" size="lg" />
+            </Col>
+            <Col cw={4}>
+              <Input type="transperent" size="sm" />
+            </Col>
+            <Col cw={4}>
+              <Input type="search" placeholder="Поиск" icon={<MdSearch />} />
+            </Col>
+            <Col cw={4}>
+              <Input type="search" placeholder="Поиск" icon={<MdSearch />} />
+            </Col>
+            <Col cw={4}>
+              <Input type="search" placeholder="Поиск" icon={<MdSearch />} />
+            </Col>
           </Row>
           <Row> sdihvbijvhb</Row>
-          <Input placeholder="Поиск" iconLeft={MdSearch} size="lg" />
+
           <Input color="dark" />
           <Buttton
             iconLeft={MdAddCircleOutline}
