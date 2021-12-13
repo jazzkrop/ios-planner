@@ -17,7 +17,7 @@ const Navigator = () => {
   return (
     <>
       <AppLayout>
-        <Container>
+        <Container size="xxs">
           <Row>
             <Col cw={6}>col 1</Col>
             <Col cw={6}>col 2</Col>
