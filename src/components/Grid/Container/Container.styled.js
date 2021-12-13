@@ -48,7 +48,7 @@ const ContainerSize = {
     max-width: 1320px;
   }
   `,
-  xs: `
+  sm: `
   width: 100%;
   margin: 0 auto;
   @media(min-width: 576px) {
@@ -67,7 +67,7 @@ const ContainerSize = {
     max-width: 1320px;
   }
   `,
-  xxs: `
+  xs: `
   width: 100%;
   margin: 0 auto;
   @media(min-width: 576px) {

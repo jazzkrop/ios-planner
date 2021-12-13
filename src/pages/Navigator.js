@@ -17,13 +17,15 @@ const Navigator = () => {
   return (
     <>
       <AppLayout>
-        <Container size="xxs">
+        <Container size="xs">
           <Row>
-            <Col cw={6}>col 1</Col>
-            <Col cw={6}>col 2</Col>
-            <Col cw={6}>col 2</Col>
-            <Col cw={6}>col 2</Col>
-            <Col cw={6}>col 2</Col>
+            <Col sm={4} lg={6}>
+              col 1
+            </Col>
+            <Col>col 2</Col>
+            <Col>col 2</Col>
+            <Col>col 2</Col>
+            <Col>col 2</Col>
           </Row>
           <Row> sdihvbijvhb</Row>
           <Input placeholder="Поиск" iconLeft={MdSearch} size="lg" />
@@ -35,13 +37,14 @@ const Navigator = () => {
           >
             Новый список
           </Buttton>
+
+          <Buttton iconLeft={MdAdd} iconSize="xl" color="darkLighten7" />
+          <Buttton iconLeft={MdFlag} color="orange" />
+          <Buttton iconLeft={MdClose} color="darkLighten6" />
+          <Buttton size="lg" color="darkLighten5">
+            Показать
+          </Buttton>
         </Container>
-        <Buttton iconLeft={MdAdd} iconSize="xl" color="darkLighten7" />
-        <Buttton iconLeft={MdFlag} color="orange" />
-        <Buttton iconLeft={MdClose} color="darkLighten6" />
-        <Buttton size="lg" color="darkLighten5">
-          Показать
-        </Buttton>
       </AppLayout>
     </>
   )
