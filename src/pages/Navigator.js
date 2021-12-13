@@ -12,6 +12,7 @@ import { Input } from '../components/Input'
 import { Container } from '../components/Grid/Container'
 import Row from '../components/Grid/Row/Row'
 import Col from '../components/Grid/Col/Col'
+import { Divider } from '../components/Divider'
 
 const Navigator = () => {
   return (
@@ -54,6 +55,7 @@ const Navigator = () => {
           <Buttton size="lg" color="--dark-lighten-5">
             Показать
           </Buttton>
+          <Divider />
         </Container>
       </AppLayout>
     </>
