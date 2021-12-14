@@ -13,6 +13,8 @@ import { Container } from '../components/Grid/Container'
 import Row from '../components/Grid/Row/Row'
 import Col from '../components/Grid/Col/Col'
 import { Divider } from '../components/Divider'
+import { Title } from '../components/Title'
+import { Text } from '../components/Text'
 
 const Navigator = () => {
   return (
@@ -56,6 +58,19 @@ const Navigator = () => {
             Показать
           </Buttton>
           <Divider />
+          <Title variant="h1">New title</Title>
+          <Text isElipsis variant="active">
+            New text, Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Iusto fuga nostrum dignissimos voluptas modi ullam ut? Temporibus
+            earum accusamus voluptas dicta minus beatae aliquam neque numquam
+            laboriosam saepe vero id, nesciunt distinctio deserunt ullam
+          </Text>
+          <Text variant="disabled">
+            New text, Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Iusto fuga nostrum dignissimos voluptas modi ullam ut? Temporibus
+            earum accusamus voluptas dicta minus beatae aliquam neque numquam
+            laboriosam saepe vero id, nesciunt distinctio deserunt ullam
+          </Text>
         </Container>
       </AppLayout>
     </>

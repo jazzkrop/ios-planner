@@ -1,4 +1,12 @@
-const HeadingText = () => {
-  return <p></p>
+import { TextStyled } from './Text.style'
+
+const Text = (props) => {
+  const { children, color, isElipsis } = props
+  return (
+    <TextStyled color={color} isElipsis={isElipsis}>
+      {children}
+    </TextStyled>
+  )
 }
-export default HeadingText
+
+export default Text

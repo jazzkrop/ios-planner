@@ -1,4 +1,4 @@
-import { ButtonStyled, TextWrapper, IconWrapper } from './Button.style'
+import { ButtonStyled, IconWrapper } from './Button.style'
 
 const Button = (props) => {
   const { isHover, isActive, children, shape, icon, size, color } = props
@@ -11,16 +11,12 @@ const Button = (props) => {
       shape={shape}
       color={color}
     >
-      {icon && children ? (
-        <>
-          <IconWrapper size={size}>{icon}</IconWrapper>
-          <TextWrapper>{children}</TextWrapper>
-        </>
-      ) : icon ? (
-        <IconWrapper size={size}>{icon}</IconWrapper>
-      ) : children ? (
-        children
-      ) : null}
+      {icon && (
+        <IconWrapper mr={icon && children && 6} size={size}>
+          {icon}
+        </IconWrapper>
+      )}
+      {children}
     </ButtonStyled>
   )
 }

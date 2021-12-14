@@ -17,7 +17,6 @@ const ContainerSize = {
   @media(min-width:1400px) {
     max-width: 1320px;
   }
-  
   `,
   lg: `
   width: 100%;

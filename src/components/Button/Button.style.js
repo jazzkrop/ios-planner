@@ -1,9 +1,5 @@
 import styled, { css } from 'styled-components'
 
-const TextWrapper = styled.div`
-  margin-left: 5px;
-`
-
 const ButtonStyled = styled.button`
   display: flex;
   align-items: center;
@@ -40,13 +36,14 @@ const ButtonStyled = styled.button`
         `
       default:
         return css`
-          font-size: 16px;
+          font-size: var(--fz-body-1);
           font-weight: bold;
         `
     }
   }}
 `
 const IconWrapper = styled.div`
+  margin-right: ${(props) => props.mr || 0}px;
   display: flex;
   ${(props) => {
     switch (props.size) {
@@ -69,4 +66,4 @@ const IconWrapper = styled.div`
     }
   }}
 `
-export { ButtonStyled, TextWrapper, IconWrapper }
+export { ButtonStyled, IconWrapper }

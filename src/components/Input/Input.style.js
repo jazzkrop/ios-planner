@@ -66,7 +66,7 @@ const InputStyled = styled.input`
       case 'search':
         return css`
           background-color: var(--dark-lighten-4);
-          border-radius: 8px;
+          border-radius: 6px;
           border: 3px solid transparent;
           padding-left: 32px;
 
