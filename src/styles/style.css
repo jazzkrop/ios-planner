@@ -91,6 +91,7 @@ body,
   --offset-1: 2px;
 
   /* border-radius */
+  --border-radius-rounded: 50%;
   --border-radius-6: 12px;
   --border-radius-5: 10px;
   --border-radius-4: 8px;

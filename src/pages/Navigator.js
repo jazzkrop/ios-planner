@@ -114,7 +114,7 @@ const Navigator = () => {
                         icon={<MdOutlineEventNote />}
                       />
                     }
-                    topRight={<Title variant="h3">0</Title>}
+                    topRight={<Title variant="h3">123</Title>}
                     title={
                       <Title isElipsis variant="h6">
                         Запланировано
@@ -144,6 +144,7 @@ const Navigator = () => {
                 </Col>
                 <Col cw={6}>
                   <Switcher
+                    isActive
                     topLeft={
                       <Icon
                         rounded

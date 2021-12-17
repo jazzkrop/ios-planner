@@ -8,7 +8,8 @@ const ButtonStyled = styled.button`
   color: ${(props) => (props.color ? props.color : 'var(--dark-lighten-9)')};
   border: none;
   padding: 4px;
-  border-radius: ${(props) => (props.shape === 'circle' ? '50%' : '6px')};
+  border-radius: ${(props) =>
+    props.shape === 'circle' ? 'var(--border-radius-rounded)' : '6px'};
 
   &:hover {
     background-color: ${(props) =>
