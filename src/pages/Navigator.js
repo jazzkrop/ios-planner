@@ -4,7 +4,10 @@ import {
   MdAdd,
   MdFlag,
   MdClose,
-  MdSearch
+  MdSearch,
+  MdCalendarToday,
+  MdOutlineEventNote,
+  MdInbox
 } from 'react-icons/md'
 import AppLayout from '../components/Layouts/AppLayout'
 import TasksAll from './TaskAll/TaskAll'
@@ -15,12 +18,15 @@ import Col from '../components/Grid/Col/Col'
 import { Divider } from '../components/Divider'
 import { Title } from '../components/Title'
 import { Text } from '../components/Text'
+import Switcher from '../components/Switcher/Switcher'
+import Icon from '../components/Icon/Icon'
+import { Checkbox } from '../components/Checkbox'
 
 const Navigator = () => {
   return (
     <>
       <AppLayout>
-        <Container size="xs">
+        <Container size="fluid">
           <Row>
             <Col cw={4}>
               <Input
@@ -47,14 +53,19 @@ const Navigator = () => {
             </Col>
           </Row>
           <Input />
-          <Buttton icon={<MdAddCircleOutline />} size="md">
+          <Buttton isHover icon={<MdAddCircleOutline />} size="md">
             Новый список
           </Buttton>
 
-          <Buttton icon={<MdAdd />} color="--dark-lighten-7" size="lg" />
-          <Buttton icon={<MdFlag />} color="--orange" size="md" />
-          <Buttton icon={<MdClose />} color="--dark-lighten-6" />
-          <Buttton size="lg" color="--dark-lighten-5">
+          <Buttton
+            isHover
+            icon={<MdAdd />}
+            color="var(--dark-lighten-7)"
+            size="lg"
+          />
+          <Buttton icon={<MdFlag />} color="var(--orange)" size="md" />
+          <Buttton isHover icon={<MdClose />} color="var(--dark-lighten-6)" />
+          <Buttton size="lg" color="var(--dark-lighten-5)">
             Показать
           </Buttton>
           <Divider />
@@ -71,6 +82,89 @@ const Navigator = () => {
             earum accusamus voluptas dicta minus beatae aliquam neque numquam
             laboriosam saepe vero id, nesciunt distinctio deserunt ullam
           </Text>
+          <Row mb={24}>
+            <Col cw={3}>
+              <Row gy={12}>
+                <Col cw={6}>
+                  <Switcher
+                    topLeft={
+                      <Icon
+                        rounded
+                        size="lg"
+                        background="var(--blue)"
+                        icon={<MdCalendarToday />}
+                      />
+                    }
+                    topRight={<Title variant="h3">0</Title>}
+                    title={
+                      <Title isElipsis variant="h6">
+                        Сегодня
+                      </Title>
+                    }
+                    url="/tasks-all/today"
+                  />
+                </Col>
+                <Col cw={6}>
+                  <Switcher
+                    topLeft={
+                      <Icon
+                        rounded
+                        size="lg"
+                        background="var(--red)"
+                        icon={<MdOutlineEventNote />}
+                      />
+                    }
+                    topRight={<Title variant="h3">0</Title>}
+                    title={
+                      <Title isElipsis variant="h6">
+                        Запланировано
+                      </Title>
+                    }
+                    url="/tasks-all/today"
+                  />
+                </Col>
+                <Col cw={6}>
+                  <Switcher
+                    topLeft={
+                      <Icon
+                        rounded
+                        size="lg"
+                        background="var(--dark-lighten-4)"
+                        icon={<MdInbox />}
+                      />
+                    }
+                    topRight={<Title variant="h3">0</Title>}
+                    title={
+                      <Title isElipsis variant="h6">
+                        Все
+                      </Title>
+                    }
+                    url="/tasks-all/today"
+                  />
+                </Col>
+                <Col cw={6}>
+                  <Switcher
+                    topLeft={
+                      <Icon
+                        rounded
+                        size="lg"
+                        background="var(--orange)"
+                        icon={<MdFlag />}
+                      />
+                    }
+                    topRight={<Title variant="h3">0</Title>}
+                    title={
+                      <Title isElipsis variant="h6">
+                        С флажком
+                      </Title>
+                    }
+                    url="/tasks-all/today"
+                  />
+                </Col>
+              </Row>
+              <Checkbox />
+            </Col>
+          </Row>
         </Container>
       </AppLayout>
     </>

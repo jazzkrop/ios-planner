@@ -35,7 +35,7 @@ body,
   --blue-lighten-1: #408be6;
   --blue-lighten-1-transperent: #408be6ab;
   --blue-lighten-2: #86b3ef;
-  --orange: #ff9e0b;
+  --orange: #fe9d1c;
   --red: #ff453a;
   --yellow: #ffd60a;
 
@@ -57,8 +57,8 @@ body,
   --fz-caption-1: 12px;
 
   /* line-heigth */
-  --fz-mega-1: 42px;
-  --fz-mega-2: 36px;
+  ---mega-1: 42px;
+  ---mega-2: 36px;
   --lh-title-1: 32px;
   --lh-title-2: 30px;
   --lh-subtitle-1: 28px;
@@ -77,8 +77,28 @@ body,
   --fw-200: 200;
   --fw-100: 100;
   /* offsets */
-  /* TODO: offsets*/
+  --offset-12: 24px;
+  --offset-11: 22px;
+  --offset-10: 20px;
+  --offset-9: 18px;
+  --offset-8: 16px;
+  --offset-7: 14px;
+  --offset-6: 12px;
+  --offset-5: 10px;
+  --offset-4: 8px;
+  --offset-3: 6px;
+  --offset-2: 4px;
+  --offset-1: 2px;
+
+  /* border-radius */
+  --border-radius-6: 12px;
+  --border-radius-5: 10px;
+  --border-radius-4: 8px;
+  --border-radius-3: 6px;
+  --border-radius-2: 4px;
+  --border-radius-1: 2px;
 }
+
 h1,
 .h1 {
   font-size: var(--fz-mega-1);

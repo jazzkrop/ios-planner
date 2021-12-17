@@ -5,15 +5,14 @@ const ButtonStyled = styled.button`
   align-items: center;
   cursor: pointer;
   background: transparent;
-  color: ${(props) =>
-    props.color ? `var(${props.color})` : 'var(--dark-lighten-9)'};
+  color: ${(props) => (props.color ? props.color : 'var(--dark-lighten-9)')};
   border: none;
   padding: 4px;
   border-radius: ${(props) => (props.shape === 'circle' ? '50%' : '6px')};
 
   &:hover {
     background-color: ${(props) =>
-      props.isHover === 'true' ? '#ebebeb' : null};
+      props.isHover ? 'var(--dark-lighten-3)' : null};
   }
   &:active {
     background: ${(props) => (props.isActive === 'true' ? '#ccc' : null)};

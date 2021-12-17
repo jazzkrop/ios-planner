@@ -1,9 +1,16 @@
 import IconStyle from './Icon.style'
 
 const Icon = (props) => {
+  const { icon, background, size, color, rounded } = props
   return (
-    <IconStyle {...props}>
-      <props.component />
+    <IconStyle
+      className="icon"
+      background={background}
+      size={size}
+      color={color}
+      rounded={rounded}
+    >
+      {icon}
     </IconStyle>
   )
 }
