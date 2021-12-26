@@ -1,10 +1,6 @@
 import AppLayout from '../components/Layouts/AppLayout'
 import { TasksAll } from './TasksAll'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import PATHS from '../pages/paths'
 
@@ -14,10 +10,11 @@ const Navigator = () => {
       <Router>
         <AppLayout>
           <Switch>
+            <Route path={PATHS.TASKS_SCHEDULED}>Scheduled</Route>
             <Route path={PATHS.TASKS_ALL}>
               <TasksAll />
             </Route>
-            <Route path={PATHS.CATEGORIES_ALL}></Route>
+            <Route path={PATHS.CATEGORIES_ALL}>Categories All</Route>
           </Switch>
 
           {/* <Row>

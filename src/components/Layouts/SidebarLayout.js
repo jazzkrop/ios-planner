@@ -17,9 +17,12 @@ import {
   MdAddCircleOutline
 } from 'react-icons/md'
 import { useStore } from '../../contexts/Store'
+import { useHistory } from 'react-router-dom'
 
 const SidebarLayout = () => {
   const { addRecord } = useStore()
+  const history = useHistory()
+
   const createCategory = () => {
     addRecord({ collectionPath: 'categories' })
   }
@@ -49,6 +52,9 @@ const SidebarLayout = () => {
                   Сегодня
                 </Title>
               }
+              onClick={() => {
+                history.push('/tasks-all/today')
+              }}
             />
           </Col>
           <Col cw={6} px="0" pl={6}>
@@ -68,6 +74,9 @@ const SidebarLayout = () => {
                   Запланировано
                 </Title>
               }
+              onClick={() => {
+                history.push('/tasks-all/scheduled')
+              }}
             />
           </Col>
           <Col cw={6} px="0" pr={6}>
@@ -87,6 +96,9 @@ const SidebarLayout = () => {
                   Все
                 </Title>
               }
+              onClick={() => {
+                history.push('/categories-all/')
+              }}
             />
           </Col>
           <Col cw={6} px="0" pl={6}>
@@ -106,6 +118,9 @@ const SidebarLayout = () => {
                   С флажком
                 </Title>
               }
+              onClick={() => {
+                history.push('/tasks-all/flagged')
+              }}
             />
           </Col>
         </Row>
