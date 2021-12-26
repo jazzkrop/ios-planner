@@ -1,7 +1,8 @@
 import { DividerStyled } from './Divider.style'
 
 const Divider = (props) => {
-  return <DividerStyled />
+  const { negativeRight, ...rest } = props
+  return <DividerStyled negativeRight={negativeRight} {...rest} />
 }
 
 export default Divider

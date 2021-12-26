@@ -2,7 +2,7 @@ import React from 'react'
 import { TitleStyled } from './Title.style'
 
 const Title = (props) => {
-  const { variant, children, color, thin } = props
+  const { variant, children, color, thin, isElipsis, ...rest } = props
 
   return (
     <TitleStyled
@@ -10,6 +10,8 @@ const Title = (props) => {
       className={variant}
       color={color}
       thin={thin}
+      isElipsis={isElipsis}
+      {...rest}
     >
       {children}
     </TitleStyled>

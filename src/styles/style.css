@@ -9,6 +9,7 @@ html {
   font-family: var(--ff-body)
 }
 
+
 body,
 #root,
 :root,
@@ -21,7 +22,7 @@ body,
   --white-default: #ffffff;
   --black-default: #000000;
   --dark-default: #1e1e1e;
-  --dark-lighten-1: #212c2f;
+  --dark-lighten-1: #212324;
   --dark-lighten-2: #374143;
   --dark-lighten-3: #454b4c;
   --dark-lighten-4: #576062;
@@ -46,7 +47,7 @@ body,
   /* font-family */
   --ff-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   /* font-size */
-  --fz-mega-1: 32px;
+  --fz-mega-1: 42px;
   --fz-mega-2: 28px;
   --fz-title-1: 24px;
   --fz-title-2: 22px;
@@ -57,8 +58,8 @@ body,
   --fz-caption-1: 12px;
 
   /* line-heigth */
-  ---mega-1: 42px;
-  ---mega-2: 36px;
+  --lh-mega-1: 42px;
+  --lh-mega-2: 36px;
   --lh-title-1: 32px;
   --lh-title-2: 30px;
   --lh-subtitle-1: 28px;
@@ -98,6 +99,14 @@ body,
   --border-radius-3: 6px;
   --border-radius-2: 4px;
   --border-radius-1: 2px;
+
+  /* grid vars */
+  --col-padding: 10px;
+  --row-negative-margin: -10px;
+}
+
+input::selection {
+  background: var(--blue-lighten-1-transperent);
 }
 
 h1,
@@ -128,4 +137,5 @@ h5,
 h6,
 .h6 {
   font-size: var(--fz-subtitle-2);
+  line-height: var(--lh-subtitle-2);
 }

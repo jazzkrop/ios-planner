@@ -1,12 +1,19 @@
 import { IconWrapper, InputStyled, InputWrapper } from './Input.style'
 
 const Input = (props) => {
-  const { icon, placeholder, type, size } = props
+  const { icon, placeholder, type, size, bold, display, align, ...rest } = props
 
   return (
-    <InputWrapper>
-      <IconWrapper size={size}>{icon}</IconWrapper>
-      <InputStyled placeholder={placeholder} type={type} size={size} />
+    <InputWrapper display={display} align={align}>
+      {icon && <IconWrapper size={size}>{icon}</IconWrapper>}
+      <InputStyled
+        icon={icon}
+        placeholder={placeholder}
+        type={type}
+        size={size}
+        bold={bold}
+        {...rest}
+      />
     </InputWrapper>
   )
 }

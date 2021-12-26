@@ -13,8 +13,8 @@ const CheckboxStyled = styled.input.attrs({ type: 'checkbox' })`
     padding: var(--offset-2);
   }
   &:checked {
-    background-color: var(--blue);
-    border-color: var(--blue);
+    background-color: ${(props) => props.color || 'var(--blue)'};
+    border-color: ${(props) => props.color || 'var(--blue)'};
     background-clip: content-box;
   }
 `

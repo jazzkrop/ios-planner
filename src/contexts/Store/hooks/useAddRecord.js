@@ -1,23 +1,28 @@
-const uuidv4 = require('uuid')
+import { firestoreService } from '../../../services/firebase'
+
+const { getId, createDocument } = firestoreService
 
 const useAddRecord = (dispatch) => {
-  const addRecord = ({ listId, record }) => {
-    record = record || {}
-    if (listId) {
-      record.title = 'iuhdsifuh iuhiuh iuhiuh'
-      record.done = false
-      record.flaged = false
+  const addRecord = ({ collectionPath, id, values }) => {
+    values = values || {}
+    const recordId = id || getId(collectionPath)
+    values.id = recordId
+
+    if (collectionPath === 'tasks') {
+      values.createdAt = Date.now()
+      values.updatedAt = Date.now()
+      values.done = values.done || false
+      values.flagged = values.flagged || false
     }
-    else {
-      record.name= 'Новый список'
-      record.color = 'var(--submit-1)'
-      record.children  = {}
+    if (collectionPath === 'categories') {
+      values.name = values.name || 'New title'
+      values.color = values.color || 'var(--blue)'
+      values.children = []
     }
-    record.id = record.id || uuidv4.v4()
     const payload = {
-      listId,
-      id: record.id,
-      record
+      collectionPath,
+      id: recordId,
+      values
     }
 
     dispatch({ type: 'createRecord', payload })

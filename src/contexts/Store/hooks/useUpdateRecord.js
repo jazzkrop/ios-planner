@@ -1,11 +1,10 @@
 const useUpdateRecord = (dispatch) => {
-  const updateRecord = ({ listId, record }) => {
+  const updateRecord = ({ collectionPath, id, values }) => {
     const payload = {
-      listId,
-      id: record.id,
-      record
+      collectionPath,
+      id,
+      values
     }
-
     dispatch({ type: 'updateRecord', payload })
   }
 

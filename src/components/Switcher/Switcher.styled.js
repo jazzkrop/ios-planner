@@ -2,8 +2,7 @@
 import styled from 'styled-components'
 
 const SwitcherStyled = styled.div`
-  background: ${(props) =>
-    props.isActive ? 'var(--dark-lighten-5)' : 'var(--dark-lighten-6)'};
+  background: var(--dark-lighten-6);
   border-radius: ${(props) => props.borderRadius || 'var(--border-radius-6)'};
   padding: var(--offset-4);
   & h1,
@@ -14,6 +13,9 @@ const SwitcherStyled = styled.div`
   h6 {
     color: ${(props) =>
       props.isActive ? 'var(--white-default)' : 'var(--dark-lighten-8)'};
+  }
+  &:focus {
+    background: ${(props) => props.accentColor || null};
   }
   & * .icon {
     background-color: ${(props) =>

@@ -1,19 +1,19 @@
 const updateRecord = (state, payload) => {
-  const { listId, id, record } = payload
+  const { collectionPath, id, values } = payload
 
   // Creating copy of the state
   const stateCopy = JSON.parse(JSON.stringify(state))
 
-  // Creating record
-  if (listId) {
-    if (!stateCopy.lists[listId]) {
-      console.error('There is no list with this id')
-    } else {
-      Object.assign(stateCopy.lists[listId].children[id], record)
-    }
-  } else {
-    Object.assign(stateCopy.lists[id], record)
+  if (!stateCopy[collectionPath]) {
+    console.log('ERROR: There is no collection with this name')
   }
+  if (!stateCopy[collectionPath][id]) {
+    console.log('ERROR: There is no element with this id')
+  }
+
+  // updating with new values
+  Object.assign(stateCopy[collectionPath][id], values)
+  
   return { ...stateCopy }
 }
 

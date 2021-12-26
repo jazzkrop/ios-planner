@@ -1,12 +1,12 @@
 import styled, { css } from 'styled-components'
 
-const colors = {
-  active: 'var()',
-  disabled: 'var()'
-}
-
 const TextStyled = styled.p`
-  color: var(${(props) => props.variant || '--dark-lighten-10'});
+  color: ${(props) =>
+    props.color ||
+    (props.disabled && 'var(--dark-lighten-6)') ||
+    'var(--dark-lighten-10)'};
+  line-height: ${(props) => props.lineHeight || null};
+
   ${(props) => {
     if (props.isElipsis) {
       return css`
@@ -16,6 +16,6 @@ const TextStyled = styled.p`
         display: block;
       `
     }
-  }}
+  }};
 `
 export { TextStyled }

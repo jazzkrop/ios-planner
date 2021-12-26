@@ -12,8 +12,9 @@ const ButtonStyled = styled.button`
     props.shape === 'circle' ? 'var(--border-radius-rounded)' : '6px'};
 
   &:hover {
+    --hover-color: ${(props) => props.hoverColor || 'var(--dark-lighten-3)'};
     background-color: ${(props) =>
-      props.isHover ? 'var(--dark-lighten-3)' : null};
+      props.isHover ? 'var(--hover-color)' : null};
   }
   &:active {
     background: ${(props) => (props.isActive === 'true' ? '#ccc' : null)};
@@ -24,7 +25,7 @@ const ButtonStyled = styled.button`
       case 'sm':
         return css`
           font-size: var(--fz-body-2);
-          font-weight: bold;
+          font-weight: var(--fw-400);
         `
       case 'md':
         return css`
@@ -37,7 +38,7 @@ const ButtonStyled = styled.button`
       default:
         return css`
           font-size: var(--fz-body-1);
-          font-weight: bold;
+          font-weight: var(--fw-400);
         `
     }
   }}

@@ -94,6 +94,8 @@ const ContainerSize = {
 }
 
 const ContainerStyled = styled.div`
+  box-sizing: border-box;
+  height: 100%;
   ${(props) => ContainerSize[props.size]}
 `
 export default ContainerStyled

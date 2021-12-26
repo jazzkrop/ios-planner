@@ -4,9 +4,15 @@ const InputWrapper = styled.div`
   display: flex;
   position: relative;
   align-items: center;
+  /* vertical-align: ${(props) => props.align || null}; */
+  display: ${(props) => props.display || 'block'};
 `
 
-const IconWrapper = styled('Icon')`
+const colors = {
+  disabled: 'var(--dark-lighten-7)'
+}
+
+const IconWrapper = styled.div`
   color: var(--dark-lighten-10);
   position: absolute;
   left: 8px;
@@ -37,7 +43,9 @@ const IconWrapper = styled('Icon')`
 
 const InputStyled = styled.input`
   width: 100%;
-  color: var(--white-default);
+  color: ${(props) =>
+    props.color ? colors[props.color] : 'var(--white-default)'};
+  font-weight: ${(props) => (props.thin ? 'var(--fw-400)' : 'var(--fw-600)')};
 
   ${(props) => {
     switch (props.size) {
@@ -68,7 +76,6 @@ const InputStyled = styled.input`
           background-color: var(--dark-lighten-4);
           border-radius: 6px;
           border: 3px solid transparent;
-          padding-left: 32px;
 
           &:focus-visible {
             outline: none;
@@ -101,6 +108,10 @@ const InputStyled = styled.input`
         `
     }
   }}
+
+  padding-left: ${(props) => {
+    return props.icon ? '32px' : null
+  }};
 `
 
 export { InputStyled, IconWrapper, InputWrapper }

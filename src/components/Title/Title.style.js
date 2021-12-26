@@ -1,13 +1,11 @@
 import styled, { css } from 'styled-components'
 
-const colors = {
-  active: 'var()',
-  disabled: 'var()'
-}
-
 const TitleStyled = styled.div`
-  color: var(${(props) => props.color || '--dark-lighten-5'});
-  font-weight: ${(props) => (props.thin ? '400' : 'bold')};
+  display: ${(props) =>
+    props.display || props.align ? 'inline' : null || 'block'};
+  color: ${(props) => props.color || 'var(--dark-lighten-5)'};
+  font-weight: ${(props) => (props.thin ? '400' : 'var(--fw-500)')};
+  /* vertical-align: ${(props) => props.align || null}; */
   ${(props) => {
     if (props.isElipsis) {
       return css`

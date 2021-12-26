@@ -1,19 +1,11 @@
 const createRecord = (state, payload) => {
-  const { listId, id, record } = payload
+  const { collectionPath, id, values } = payload
 
   // Creating copy of the state
   const stateCopy = JSON.parse(JSON.stringify(state))
 
-  // Creating record
-  if (listId) {
-    if (!stateCopy.lists[listId]) {
-      console.error('There is no list with this id')
-    } else {
-      stateCopy.lists[listId].children[id] = record
-    }
-  } else {
-    stateCopy.lists[id] = record
-  }
+  stateCopy[collectionPath][id] = values
+
   return { ...stateCopy }
 }
 

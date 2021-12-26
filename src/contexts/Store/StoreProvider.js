@@ -1,18 +1,21 @@
 import { useReducer } from 'react'
 import StoreContext from './StoreContext'
-import {reducer} from './reducer'
+import { reducer } from './reducer'
 import {
   useAddRecord,
   useDestroyRecord,
-  useUpdateRecord
+  useUpdateRecord,
+  useGetNumberOfDoneTasks,
+  useGetNumberOfUndoneTasks
 } from './hooks'
 
 const StoreProvider = ({ children }) => {
-  const [store, dispatch] = useReducer(reducer, {lists:{}, currentList:'all'})
+  const [store, dispatch] = useReducer(reducer, { categories: {}, tasks: {} })
   const addRecord = useAddRecord(dispatch)
   const destroyRecord = useDestroyRecord(dispatch)
   const updateRecord = useUpdateRecord(dispatch)
-
+  const getNumberOfDoneTasks = useGetNumberOfDoneTasks(store)
+  const getNumberOfUndoneTasks = useGetNumberOfUndoneTasks(store)
   console.log('store ->', store)
 
   return (
@@ -21,7 +24,9 @@ const StoreProvider = ({ children }) => {
         store,
         addRecord,
         destroyRecord,
-        updateRecord
+        updateRecord,
+        getNumberOfDoneTasks,
+        getNumberOfUndoneTasks
       }}
     >
       {children}

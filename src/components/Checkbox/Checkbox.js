@@ -1,9 +1,8 @@
-import { Row, Col } from '../Grid'
 import { CheckboxStyled } from './Checkbox.styled'
 
 const Checkbox = (props) => {
-  const { ...rest } = props
+  const { color, ...rest } = props
 
-  return <CheckboxStyled {...rest} />
+  return <CheckboxStyled color={color} {...rest} />
 }
 export default Checkbox
