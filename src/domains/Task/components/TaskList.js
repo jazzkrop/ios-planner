@@ -35,6 +35,7 @@ const TaskList = ({
             if ((task?.done && showDoneTasks) || !task?.done) {
               return (
                 <TaskCombinedView
+                  parentId={categoryId}
                   key={task?.id}
                   task={task}
                   accentColor={accentColor}

@@ -15,7 +15,8 @@ const TaskCombinedView = ({
   task,
   accentColor,
   createMode,
-  setShowTaskForm
+  setShowTaskForm,
+  parentId
 }) => {
   const { destroyRecord, updateRecord, addRecord } = useStore()
   const [onEdit, setOnEdit] = useState(createMode || false)
@@ -57,6 +58,7 @@ const TaskCombinedView = ({
     if (createMode) {
       setTaskFlagged(!taskFlagged)
     } else {
+      setTaskFlagged(!taskFlagged)
       updateRecord({
         collectionPath: 'tasks',
         id: task.id,
@@ -85,7 +87,8 @@ const TaskCombinedView = ({
         notes: taskNotes,
         flagged: taskFlagged,
         scheduled: taskDate,
-        done: taskDone
+        done: taskDone,
+        parentId: parentId
       }
       if (createMode) {
         if (valuesNotEmpty()) {
@@ -111,7 +114,8 @@ const TaskCombinedView = ({
         notes: taskNotes,
         flagged: taskFlagged,
         scheduled: taskDate,
-        done: taskDone
+        done: taskDone,
+        parentId: parentId
       }
       if (createMode) {
         addRecord({

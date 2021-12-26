@@ -7,7 +7,7 @@ import { MdAdd } from 'react-icons/md'
 import { useShowTaskForm } from '../../domains/Task/hooks'
 
 const TasksAll = () => {
-  const { addRecord, store, getNumberOfDoneTasks, getNumberOfUndoneTasks } =
+  const { store, getNumberOfDoneTasks, getNumberOfUndoneTasks } =
     useStore()
   const { id } = useParams()
   const [showDoneTasks, setShowDoneTasks] = useState(false)
@@ -22,6 +22,7 @@ const TasksAll = () => {
       : id === 'today'
       ? 'var(--blue)'
       : category.color || 'var(--blue)'
+
   const numberOfUndoneTasks = getNumberOfUndoneTasks(id)
   const numberOfDoneTasks = getNumberOfDoneTasks(id)
 
