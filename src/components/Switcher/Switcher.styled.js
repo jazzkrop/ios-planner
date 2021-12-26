@@ -5,22 +5,21 @@ const SwitcherStyled = styled.div`
   background: var(--dark-lighten-6);
   border-radius: ${(props) => props.borderRadius || 'var(--border-radius-6)'};
   padding: var(--offset-4);
-  & h1,
+  &:focus h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    color: ${(props) =>
-      props.isActive ? 'var(--white-default)' : 'var(--dark-lighten-8)'};
+    color: var(--white-default);
   }
   &:focus {
     background: ${(props) => props.accentColor || null};
+    color: var(--white-default);
   }
-  & * .icon {
-    background-color: ${(props) =>
-      props.isActive ? 'var(--white-default)' : null};
-    color: ${(props) => (props.isActive ? 'var(--dark-lighten-4)' : null)};
+  &:focus * .icon {
+    background-color: var(--white-default);
+    color: ${(props) => props.accentColor || null};
   }
 `
 export { SwitcherStyled }
