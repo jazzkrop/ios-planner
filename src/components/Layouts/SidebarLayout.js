@@ -20,7 +20,7 @@ import { useStore } from '../../contexts/Store'
 import { useHistory } from 'react-router-dom'
 
 const SidebarLayout = () => {
-  const { addRecord } = useStore()
+  const { addRecord, getNumberOfUndoneTasks } = useStore()
   const history = useHistory()
 
   const createCategory = () => {
@@ -46,7 +46,9 @@ const SidebarLayout = () => {
                   icon={<MdCalendarToday />}
                 />
               }
-              topRight={<Title variant="h3">0</Title>}
+              topRight={
+                <Title variant="h3">{getNumberOfUndoneTasks('today')}</Title>
+              }
               title={
                 <Title isElipsis variant="h6">
                   Сегодня
@@ -68,7 +70,9 @@ const SidebarLayout = () => {
                   icon={<MdOutlineEventNote />}
                 />
               }
-              topRight={<Title variant="h3">123</Title>}
+              topRight={
+                <Title variant="h3">{getNumberOfUndoneTasks('scheduled')}</Title>
+              }
               title={
                 <Title isElipsis variant="h6">
                   Запланировано
@@ -90,7 +94,9 @@ const SidebarLayout = () => {
                   icon={<MdInbox />}
                 />
               }
-              topRight={<Title variant="h3">0</Title>}
+              topRight={
+                <Title variant="h3">{getNumberOfUndoneTasks('all')}</Title>
+              }
               title={
                 <Title isElipsis variant="h6">
                   Все
@@ -112,7 +118,9 @@ const SidebarLayout = () => {
                   icon={<MdFlag />}
                 />
               }
-              topRight={<Title variant="h3">0</Title>}
+              topRight={
+                <Title variant="h3">{getNumberOfUndoneTasks('flagged')}</Title>
+              }
               title={
                 <Title isElipsis variant="h6">
                   С флажком

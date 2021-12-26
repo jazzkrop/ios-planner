@@ -8,7 +8,9 @@ const useGetNumberOfUbdoneTasks = (store) => {
         !task.done &&
         (task.parentId === id ||
           (id === 'flagged' && task.flagged) ||
-          (id === 'today' && task.scheduled))
+          (id === 'today' && task.scheduled === Date.now()) ||
+          id === 'all' ||
+          (id === 'scheduled' && task.scheduled))
       ) {
         numberOfUndoneTasks += 1
       }

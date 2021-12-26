@@ -17,7 +17,6 @@ const TaskCombinedView = ({
   createMode,
   setShowTaskForm
 }) => {
-  console.log('task ->', task)
   const { destroyRecord, updateRecord, addRecord } = useStore()
   const [onEdit, setOnEdit] = useState(createMode || false)
   const [taskName, setTaskName] = useState(task?.name || '')
