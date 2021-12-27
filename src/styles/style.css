@@ -106,7 +106,7 @@ body,
 }
 
 input::selection {
-  background: var(--blue-lighten-1-transperent);
+  background: var(--blue-lighten-1-transperentgit );
 }
 
 h1,
@@ -139,3 +139,4 @@ h6,
   font-size: var(--fz-subtitle-2);
   line-height: var(--lh-subtitle-2);
 }
+
