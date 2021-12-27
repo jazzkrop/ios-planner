@@ -1,24 +1,8 @@
-import {
-  Row,
-  Col,
-  Switcher,
-  Title,
-  Icon,
-  Input,
-  Button
-} from '../../components'
+import { Row, Col, Title, Button } from '../../components'
 import { CategoryList } from '../../domains/Category/components'
-import {
-  MdCalendarToday,
-  MdOutlineEventNote,
-  MdInbox,
-  MdFlag,
-  MdSearch,
-  MdAddCircleOutline
-} from 'react-icons/md'
+import { MdAddCircleOutline } from 'react-icons/md'
 import { useStore } from '../../contexts/Store'
-import { useHistory } from 'react-router-dom'
-import { SwitchersList, TaskSearch } from './components'
+import { SwitchersList, TasksSearchInput } from './components'
 
 const SidebarLayout = () => {
   const { addRecord } = useStore()
@@ -31,7 +15,7 @@ const SidebarLayout = () => {
       <Col cw="auto">
         <Row negativeMargin mb={24} mt={12}>
           <Col>
-            <TaskSearch />
+            <TasksSearchInput />
           </Col>
         </Row>
         <Row negativeMargin>

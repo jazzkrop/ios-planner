@@ -1,7 +1,7 @@
 const removeRecord = (state, payload) => {
   const { id, collectionPath } = payload
   // Creating copy of the state
-  const stateCopy = state
+  const stateCopy = JSON.parse(JSON.stringify(state))
 
   if (!stateCopy[collectionPath]) {
     console.log('ERROR: There is no collection with this name')

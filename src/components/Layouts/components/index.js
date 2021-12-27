@@ -1,2 +1,2 @@
-export { default as TaskSearch } from './TaskSearch'
+export { default as TasksSearchInput } from './TasksSearchInput'
 export { default as SwitchersList } from './SwitchersList'
