@@ -7,7 +7,7 @@ const TasksSearch = () => {
   const { searchRecords } = useStore()
   const history = useHistory()
   let timer = null
-  const handleSearchInputChange = (event) => {
+  const decideAboutMakingQuery = (event) => {
     clearTimeout(timer)
     timer = setTimeout(() => {
       searchRecords({ collectionPath: 'tasks', query: event.target.value })
@@ -20,7 +20,8 @@ const TasksSearch = () => {
       type="search"
       placeholder="Поиск"
       icon={<MdSearch />}
-      onChange={handleSearchInputChange}
+      onChange={decideAboutMakingQuery}
+      onClick={decideAboutMakingQuery}
     />
   )
 }

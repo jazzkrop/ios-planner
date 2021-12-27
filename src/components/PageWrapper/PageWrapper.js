@@ -12,7 +12,7 @@ const PageWrapper = (props) => {
           </Row>
         )}
         {(title || subtitle) && (
-          <Row mb={24} justifyContent="space-between">
+          <Row mb={24} mt={64} justifyContent="space-between">
             <Col cw="auto">
               <Title variant="h1" color={accentColor}>
                 {title}

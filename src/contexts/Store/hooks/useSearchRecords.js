@@ -1,10 +1,13 @@
 const useSearchRecords = (store, dispatch) => {
-  // TODO: rename this function
   const searchRecords = ({ collectionPath, query }) => {
-    // make array from quary
+    if (query.length === 0) {
+      console.log('Invalid query')
+      return
+    }
     const queryExtended = query?.split(' ')
     const arrayValues = Object.values(store[collectionPath])
 
+    // TODO: rename this function
     const isLookingFor = (item) => {
       for (let i = 0; i < queryExtended.length; i++) {
         const queryWord = queryExtended[i]
@@ -14,10 +17,12 @@ const useSearchRecords = (store, dispatch) => {
       }
       return true
     }
-
     const result = arrayValues.filter(isLookingFor)
-    console.log(result)
-    const payload = { collectionPath, searchedRecords: result }
+    const payload = {
+      collectionPath,
+      searchedRecords: result,
+      searchQuery: query
+    }
     dispatch({ type: 'searchRecords', payload })
   }
   return searchRecords

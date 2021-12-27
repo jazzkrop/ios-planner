@@ -4,19 +4,28 @@ import useStore from '../../../contexts/Store/hooks/useStore'
 
 const TaskList = ({
   categoryId,
-  showDoneTasks,
+  showDoneTasks = true,
   showTaskForm,
-  setShowTaskForm
+  setShowTaskForm = () => {},
+  showFiltered
 }) => {
   const { store, getNumberOfDoneTasks } = useStore()
 
   const tasksArray = Object.values(store?.tasks) || []
-
-  const tasksResult = tasksArray.filter(
-    (task) =>
-      task?.parentId === categoryId ||
-      (categoryId === 'flagged' && task?.flagged)
-  )
+  const getTaskResult = () => {
+    if (showFiltered) {
+      return store.filtered?.tasks?.result?.filter(
+        (task) => task?.parentId === categoryId
+      )
+    } else {
+      return tasksArray.filter(
+        (task) =>
+          task?.parentId === categoryId ||
+          (categoryId === 'flagged' && task?.flagged)
+      )
+    }
+  }
+  const tasksResult = getTaskResult()
   const accentColor =
     categoryId === 'flagged'
       ? 'var(--orange)'
@@ -28,8 +37,8 @@ const TaskList = ({
     tasksResult.length === getNumberOfDoneTasks(categoryId)
   const noTasks = tasksResult.length === 0
   return (
-    <Row height="100%" overflow="hidden" negativeMargin>
-      <Col cw={12} height="100%" overflow="hidden">
+    <Row overflow="hidden" negativeMargin>
+      <Col cw={12} overflow="hidden">
         {tasksResult.length > 0 &&
           tasksResult.map((task) => {
             if ((task?.done && showDoneTasks) || !task?.done) {
@@ -48,6 +57,7 @@ const TaskList = ({
             accentColor={accentColor}
             createMode
             setShowTaskForm={setShowTaskForm}
+            parentId={categoryId}
           />
         )}
         {noTasks && !showTaskForm && (
