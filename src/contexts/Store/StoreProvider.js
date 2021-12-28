@@ -7,7 +7,8 @@ import {
   useUpdateRecord,
   useGetNumberOfDoneTasks,
   useGetNumberOfUndoneTasks,
-  useSearchRecords
+  useSearchRecords,
+  useFetchRecords
 } from './hooks'
 
 const StoreProvider = ({ children }) => {
@@ -17,11 +18,12 @@ const StoreProvider = ({ children }) => {
     filtered: {}
   })
   const addRecord = useAddRecord(store, dispatch)
-  const destroyRecord = useDestroyRecord(dispatch)
+  const destroyRecord = useDestroyRecord(store, dispatch)
   const updateRecord = useUpdateRecord(dispatch)
   const getNumberOfDoneTasks = useGetNumberOfDoneTasks(store)
   const getNumberOfUndoneTasks = useGetNumberOfUndoneTasks(store)
   const searchRecords = useSearchRecords(store, dispatch)
+  const fetchRecords = useFetchRecords(dispatch)
 
   console.log('store ->', store)
 
@@ -34,7 +36,8 @@ const StoreProvider = ({ children }) => {
         updateRecord,
         getNumberOfDoneTasks,
         getNumberOfUndoneTasks,
-        searchRecords
+        searchRecords,
+        fetchRecords
       }}
     >
       {children}

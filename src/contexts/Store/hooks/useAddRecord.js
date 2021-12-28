@@ -3,7 +3,7 @@ import { firestoreService } from '../../../services/firebase'
 const { getId, createDocument } = firestoreService
 
 const useAddRecord = (store, dispatch) => {
-  const addRecord = ({ collectionPath, id, values }) => {
+  const addRecord = async ({ collectionPath, id, values }) => {
     values = values || {}
     const recordId = id || getId(collectionPath)
     values.id = recordId
@@ -24,6 +24,7 @@ const useAddRecord = (store, dispatch) => {
       values.color = values.color || 'var(--blue)'
       values.children = []
     }
+
     const payload = {
       collectionPath,
       id: recordId,
@@ -31,6 +32,8 @@ const useAddRecord = (store, dispatch) => {
     }
 
     dispatch({ type: 'createRecord', payload })
+    console.log(values)
+    await createDocument(collectionPath, recordId, values)
   }
 
   return addRecord

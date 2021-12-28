@@ -18,7 +18,8 @@ const TasksSearch = () => {
   return (
     <Input
       type="search"
-      placeholder="Поиск"
+      placeholder="Search"
+      thin
       icon={<MdSearch />}
       onChange={decideAboutMakingQuery}
       onClick={decideAboutMakingQuery}

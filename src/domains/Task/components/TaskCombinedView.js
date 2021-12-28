@@ -24,7 +24,7 @@ const TaskCombinedView = ({
   const [taskDone, setTaskDone] = useState(task?.done || false)
   const [taskNotes, setTaskNotes] = useState(task?.notes || '')
   const [taskFlagged, setTaskFlagged] = useState(task?.flagged || false)
-  const [taskDate, setTaskDate] = useState(task?.scheduled)
+  const [taskDate, setTaskDate] = useState(task?.scheduled || '')
 
   const valuesChanged = () => {
     if (
