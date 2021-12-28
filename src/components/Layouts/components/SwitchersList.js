@@ -30,7 +30,7 @@ const SwitcherList = () => {
           }
           title={
             <Title isElipsis variant="h6">
-              Сегодня
+              Today
             </Title>
           }
           onClick={() => {
@@ -54,7 +54,7 @@ const SwitcherList = () => {
           }
           title={
             <Title isElipsis variant="h6">
-              Запланировано
+              Scheduled
             </Title>
           }
           onClick={() => {
@@ -76,7 +76,7 @@ const SwitcherList = () => {
           topRight={<Title variant="h3">{getNumberOfUndoneTasks('all')}</Title>}
           title={
             <Title isElipsis variant="h6">
-              Все
+              All
             </Title>
           }
           onClick={() => {
@@ -100,7 +100,7 @@ const SwitcherList = () => {
           }
           title={
             <Title isElipsis variant="h6">
-              С флажком
+              Flagged
             </Title>
           }
           onClick={() => {

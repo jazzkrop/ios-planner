@@ -5,8 +5,8 @@ import PATHS from '../pages/paths'
 import AppLayout from '../components/Layouts/AppLayout'
 import { TasksAll } from './TasksAll'
 import { TasksSearch } from './TasksSearch'
-import { Text } from '../components'
 import LoadingPage from './LoadingPage'
+import CategoriesAll from './CategoriesAll/CategoriesAll'
 
 const Navigator = () => {
   const { fetchRecords } = useStore()
@@ -33,7 +33,9 @@ const Navigator = () => {
               <Route path={PATHS.TASKS_ALL}>
                 <TasksAll />
               </Route>
-              <Route path={PATHS.CATEGORIES_ALL}>Categories All</Route>
+              <Route path={PATHS.CATEGORIES_ALL}>
+                <CategoriesAll />
+              </Route>
             </Switch>
           )}
         </AppLayout>

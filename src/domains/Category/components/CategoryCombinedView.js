@@ -3,7 +3,6 @@ import { MdCalendarToday, MdClose } from 'react-icons/md'
 import { useHistory } from 'react-router-dom'
 import { Card, Row, Col, Icon, Input, Title, Button } from '../../../components'
 import { useStore } from '../../../contexts/Store'
-import useOnComponentDidMount from '../../../hooks/useOnComponentDidMount'
 
 const CategoryCombinedView = ({ category }) => {
   const { destroyRecord, updateRecord, getNumberOfUndoneTasks } = useStore()

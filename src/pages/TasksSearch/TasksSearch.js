@@ -1,12 +1,9 @@
-import { useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { PageWrapper, Title, Text, Row, Col, Divider } from '../../components'
+import { PageWrapper, Title, Row, Col } from '../../components'
 import { TaskList } from '../../domains/Task/components'
 import { useStore } from '../../contexts/Store'
 
 const TasksSearch = () => {
-  const { store, getNumberOfDoneTasks, getNumberOfUndoneTasks } = useStore()
-  const { id } = useParams()
+  const { store } = useStore()
   const title = `Results for "${store.filtered?.tasks?.query || ''}"`
   const searchResult = store.filtered?.tasks?.result || []
   const getCategoriesId = () => {
@@ -19,6 +16,7 @@ const TasksSearch = () => {
     return categoriesId
   }
   const categoriesId = getCategoriesId()
+  
   return (
     <PageWrapper title={title}>
       {categoriesId.map((categoryId) => {

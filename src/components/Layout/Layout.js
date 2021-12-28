@@ -10,14 +10,23 @@ const Layout = (props) => {
         <Row height="100%">
           {leftAside && (
             <Col
-              cw={3}
+              xl={2}
+              lg={3}
+              sm={4}
+              xs={5}
               height="100%"
               borderRight="1px solid var(--black-default)"
             >
               {leftAside}
             </Col>
           )}
-          <Col background={background} pt={16} cw={(leftAside && 9) || 12}>
+          <Col
+            background={background}
+            pt={16}
+            cw={(leftAside && 9) || 12}
+            height="100vh"
+            overflowY="auto"
+          >
             {children}
           </Col>
         </Row>

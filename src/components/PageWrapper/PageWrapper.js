@@ -4,7 +4,13 @@ const PageWrapper = (props) => {
   const { title, subtitle, topRight, children, accentColor } = props
 
   return (
-    <Row negativeMargin flexDirection="column" height="100%">
+    <Row
+      negativeMargin
+      flexDirection="column"
+      height="100wh"
+      overflowY="auto"
+      overflow="hidden"
+    >
       <Col cw="auto" overflow="hidden">
         {topRight && (
           <Row mb={16} flexDirection="row-reverse">
@@ -26,7 +32,7 @@ const PageWrapper = (props) => {
           </Row>
         )}
       </Col>
-      <Col cw={12} flexBasis="80%" overflow="hidden">
+      <Col cw={12} flexBasis="80%">
         {children}
       </Col>
     </Row>
