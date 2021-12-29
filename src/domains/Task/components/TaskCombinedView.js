@@ -68,7 +68,6 @@ const TaskCombinedView = ({
   }
   const changeTaskDone = (event) => {
     if (createMode) {
-      console.log('checked ->', event.target.checked)
       setTaskDone(event.target.checked)
     } else {
       setTaskDone(event.target.checked)

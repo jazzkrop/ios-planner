@@ -32,7 +32,7 @@ const useAddRecord = (store, dispatch) => {
     }
 
     dispatch({ type: 'createRecord', payload })
-    console.log(values)
+    
     await createDocument(collectionPath, recordId, values)
   }
 

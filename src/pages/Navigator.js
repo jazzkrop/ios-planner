@@ -7,11 +7,12 @@ import { TasksAll } from './TasksAll'
 import { TasksSearch } from './TasksSearch'
 import LoadingPage from './LoadingPage'
 import CategoriesAll from './CategoriesAll/CategoriesAll'
+import { TasksScheduled } from './TasksScheduled'
 
 const Navigator = () => {
   const { fetchRecords } = useStore()
   const [loading, setLoading] = useState(true)
-  console.log(loading)
+  
   const fetchData = useCallback(async () => {
     await fetchRecords()
     setLoading(false)
@@ -26,7 +27,9 @@ const Navigator = () => {
           {loading && <LoadingPage />}
           {!loading && (
             <Switch>
-              <Route path={PATHS.TASKS_SCHEDULED}>Scheduled</Route>
+              <Route path={PATHS.TASKS_SCHEDULED}>
+                <TasksScheduled />
+              </Route>
               <Route path={PATHS.TASKS_SEARCH}>
                 <TasksSearch />
               </Route>

@@ -8,7 +8,7 @@ const CategoryCombinedView = ({ category }) => {
   const { destroyRecord, updateRecord, getNumberOfUndoneTasks } = useStore()
   const history = useHistory()
   const [categoryName, setCategoryName] = useState(category?.name)
-  const [onEdit, setOnEdit] = useState(false)
+  const [onEdit, setOnEdit] = useState(true)
 
   const numberOfUndoneTasks = getNumberOfUndoneTasks(category.id)
 
